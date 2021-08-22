@@ -1,0 +1,21 @@
+---
+# vars file for deploy-app
+app_folders: 
+  - /opt/giropops
+  - /opt/giropops/logs
+  - /opt/giropops/conf
+
+service_files:
+  - {src: "service_app.yml", dest: "/opt/giropops/service_app.yml"}
+
+deploy_file: "/opt/giropops/app-v1.yml"
+
+number_replicas: 10
+
+version: 1.0.0
+
+prometheus_scrape: true
+
+prometheus_port: 32111
+
+nginx_port: 80

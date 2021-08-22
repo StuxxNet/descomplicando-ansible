@@ -1,0 +1,8 @@
+---
+# vars file for criando-instancias
+instance_type: t2.medium
+sec_group_name: kubernetes
+image: ami-05f7491af5eef733a
+keypair: ansible-class
+region: eu-central-1
+count: 3

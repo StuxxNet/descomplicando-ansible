@@ -1,0 +1,4 @@
+---
+# vars file for install-moni-tools
+prometheus_repo_url: "prometheus-community https://prometheus-community.github.io/helm-charts"
+deploy_prometheus: "--set prometheusOperator.createCustomResource=false prometheus prometheus-community/kube-prometheus-stack"

@@ -1,0 +1,6 @@
+---
+- name: Provisionando máquinas
+  hosts: local
+  roles:
+    - criando-instancias
+...

@@ -1,0 +1,4 @@
+---
+# handlers file for install-k8s
+- include: docker-handler.yml
+- include: kubelet-handler.yml

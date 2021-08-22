@@ -1,0 +1,3 @@
+---
+# tasks file for install-moni-tools
+- include: install.yml

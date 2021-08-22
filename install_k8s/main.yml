@@ -1,0 +1,37 @@
+---
+- name: Realizando pre-reqs nas máquinas
+  hosts: all
+  become: yes
+  user: ubuntu
+  gather_facts: no
+  pre_tasks:
+    - name: Atualizando o repo e instalando o Python3
+      raw: "apt-get update -y && apt-get install -y python3"
+  roles: 
+    - { role: install-k8s, tags: ["install_k8s_role"] }
+
+- name: Criando o cluster K8S
+  become: yes
+  user: ubuntu
+  hosts: 
+    - k8s-master
+  roles: 
+    - { role: create-cluster, tags: ["create_cluster_role"] }
+    - { role: install-helm, tags: ["install_helm"] }
+
+- name: Criando os workers
+  become: yes
+  user: ubuntu
+  hosts:
+    - k8s-workers
+  roles:
+    - { role: join-cluster, tags: ["join_cluster_role"] }
+
+# - name: Instalando as tools de monitoramento
+#   become: yes
+#   user: ubuntu
+#   hosts:
+#     - k8s-master
+#   roles:
+#     - { role: install-moni-tools, tags: ["install_moni_tools_role"] }
+...
