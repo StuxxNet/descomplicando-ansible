@@ -7,7 +7,6 @@ Projeto para a instalação de um cluster K8S utilizando o Ansible + AWS. Neste 
 - Provisioning => Criar as instâncias para o nosso cluster;
 - Install K8S  => Instalação do cluster, etc;
 - Deploy APP   => Deploy da nossa primeira aplicação;
-- Extra        => Segredo!
 ```
 
 ## License
